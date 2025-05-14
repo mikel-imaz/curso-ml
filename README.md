@@ -7,3 +7,5 @@
 ## Curso de Machine Learning
 A conceptual course on Machine Learning following [Cassie Kozyrkov](https://www.kozyr.com/)'s [MFML](https://www.youtube.com/watch?v=1vkb7BCMQd0) talks.  
 En español.
+
+[![](docs/imgs/draw_009.png)](https://mikel-imaz.github.io/curso-ml)
