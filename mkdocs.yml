@@ -1,0 +1,52 @@
+# Project information
+site_name: Curso de Machine Learning
+site_url: https://mikel-imaz.github.io/curso-ml
+site_author: Mikel Imaz
+site_description: Curso de Machine Learning
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.instant
+
+# Extensions
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# Page tree
+nav:
+  - Sobre el curso: index.md
+  - Referencia: toc.md
+  - Conceptos básicos:
+      - Las reglas del juego: 000.md
+      - Etiquetador de cosas: 001_1.md
+      - Un cambio de paradigma: 001_2.md
+      - Generalizar: 002.md
+      - Modelo de clasificación: 003.md
+      - Validación del modelo: 004.md
+      - Algoritmos: 005.md
+      - Regresión lineal: 006.md
+      - Regresión lineal múltiple: 007.md
+      - ¿Qué es entonces la IA?: 009.md
+      - ¿Y por qué ahora?: 010.md
