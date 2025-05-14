@@ -1,0 +1,673 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de Machine Learning">
+      
+      
+        <meta name="author" content="Mikel Imaz">
+      
+      
+        <link rel="canonical" href="https://mikel-imaz.github.io/curso-ml/009/">
+      
+      
+        <link rel="prev" href="../007/">
+      
+      
+        <link rel="next" href="../010/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>¿Qué es entonces la IA? - Curso de Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-entonces-la-ia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Curso de Machine Learning" class="md-header__button md-logo" aria-label="Curso de Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Curso de Machine Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ¿Qué es entonces la IA?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Curso de Machine Learning" class="md-nav__button md-logo" aria-label="Curso de Machine Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Curso de Machine Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre el curso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conceptos básicos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Conceptos básicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../000/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las reglas del juego
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../001_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Etiquetador de cosas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../001_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Un cambio de paradigma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generalizar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.5 21.27-.84-.09c-.76-.07-1.41-.58-1.66-1.31a11.5 11.5 0 0 1 0-6c2.32-.47 4-2.5 4-4.87 0-2-2-7-2-7H9S7 7 7 9a5 5 0 0 0 4 4.9c.53 1.96.53 4.04 0 6-.24.72-.88 1.23-1.63 1.31l-.87.09s-.5-.02-.5.7h8c0-.72-.5-.73-.5-.73M9.44 7l1-3h3.12l1 3z"/></svg>
+  
+  <span class="md-ellipsis">
+    Modelo de clasificación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.5 21.27-.84-.09c-.76-.07-1.41-.58-1.66-1.31a11.5 11.5 0 0 1 0-6c2.32-.47 4-2.5 4-4.87 0-2-2-7-2-7H9S7 7 7 9a5 5 0 0 0 4 4.9c.53 1.96.53 4.04 0 6-.24.72-.88 1.23-1.63 1.31l-.87.09s-.5-.02-.5.7h8c0-.72-.5-.73-.5-.73M9.44 7l1-3h3.12l1 3z"/></svg>
+  
+  <span class="md-ellipsis">
+    Validación del modelo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../005/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../006/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.13 15.13 18 3h-4V2h-4v1H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2.23l.64 4.13C6.74 16.05 6 17.43 6 19v1c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-1c0-1.57-.74-2.95-1.87-3.87M5 9V5h1.31l.62 4zm7 10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m2.29-5H9.72L8.33 5h7.34z"/></svg>
+  
+  <span class="md-ellipsis">
+    Regresión lineal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../007/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.13 15.13 18 3h-4V2h-4v1H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2.23l.64 4.13C6.74 16.05 6 17.43 6 19v1c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-1c0-1.57-.74-2.95-1.87-3.87M5 9V5h1.31l.62 4zm7 10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m2.29-5H9.72L8.33 5h7.34z"/></svg>
+  
+  <span class="md-ellipsis">
+    Regresión lineal múltiple
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ¿Qué es entonces la IA?
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ¿Y por qué ahora?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="que-es-entonces-la-ia">¿Qué es entonces la IA?</h1>
+<p>El término Inteligencia Artificial surgió a finales de los años 1950 y entonces significaba algo diferente de lo que hoy se entiende por <em>Inteligencia Artificial</em>.</p>
+<p>En aquel entonces era todo aquello que la tecnología prometía en cuanto a inteligencia de las máquinas. Los años finales de la década de los cincuenta e inicios de los sesenta fueron ilusionantes en este sentido: los primitivos ordenadores de aquel tiempo aprendieron a jugar a las damas y resolvían problemas lógicos. Era asombroso. Se lanzaron las campanas al vuelo y predijeron que en pocos años la IA superaría al ser humano.</p>
+<p>Se equivocaron, fue un espejismo. La tecnología era aún rudimentaria y no era posible llevar a cabo las ideas que se planteaban sobre el papel. Las expectativas se desinflaron, lo cual llevó a un periodo de tiempo conocido como "Invierno de la IA", en el que se congelaron las inversiones y las investigaciones en este campo.</p>
+<p>Hubo sucesivos altibajos, periodos en los que parecía que ahora sí, pero luego los proyectos no cuajaban y se volvían a defraudar las expectativas. Hasta el punto de que <em>Inteligencia Artificial</em> se volvió un término con mala prensa, algo poco serio más relacionado con la ciencia ficción y la cultura popular cuyo uso se trató de evitar a la hora de referirse a los avances en este terreno, para no ahuyentar a potenciales inversores.</p>
+<p>Los mayores progresos fueron llegando de la mano del Machine Learning. Hasta entonces la inteligencia se había introducido en los ordenadores a través de instrucciones definidas de forma explícita, es decir, mediante la forma clásica de programar un ordenador. Sin embargo, con Machine Learning era la propia máquina quien aprendía las características del sistema a partir de datos de ejemplo suministrados. Constituía una gran ventaja a la hora de lograr los parámetros de sistemas complejos.</p>
+<p>Los algoritmos de Machine Learning fueron implementándose de forma creciente en aplicaciones reales con la llegada de Internet y la mayor disponibilidad de datos. Sectores como el financiero y el del comercio electrónico fueron incorporándolos con éxito. Se automatizaron sistemas de recomendación, detección, segmentación, previsión y demás tareas, aumentando así la inteligencia de las empresas y los negocios.</p>
+<p>Sin embargo, seguían pendientes de ser resueltos multitud de otras aplicaciones más complejas y habitualmente más asociadas con las capacidades de la inteligencia humana. Por ejemplo, la capacidad de mantener una conversación que suene natural, como con una persona. O la de identificar elementos en una imagen.</p>
+<p>Pensemos en este cometido, el de recibir la información por medio de una imagen y dar como resultado su identificación:</p>
+<p><img alt="" src="../imgs/draw_029.png" /></p>
+<p>¿Cómo hacer que un ordenador solucione esta tarea? La forma tradicional de hacerlo no parece sencilla. Habría que definir exactamente qué hacer con cada píxel de la imagen y después programar esas instrucciones en el ordenador, una a una. «Así es como debes analizar los píxeles que te doy y así es cómo debes deducir si es un gato o no». Se ha de escribir una receta que además funcione en todas circunstancias: ¿funcionará con una imagen completamente diferente de un gato? Parece realmente complicado escribir estas reglas.</p>
+<p>Para nosotros los humanos sin embargo es sencillo. Nuestro cerebro recibe la información a través de los sentidos (imagen de un gato), y obtenemos la respuesta como por arte de magia («¡gato!»). Lo hacemos sin saber cómo lo hacemos. Sencillamente lo sabemos. Hacemos algo con esos píxeles en nuestra mente, pero no sabemos qué es eso que estamos haciendo. No tenemos ni idea de cómo funciona. No es de extrañar que no sepamos expresarlo y definir las reglas a un ordenador.</p>
+<p>La teoría de las redes neuronales era conocida desde los años cincuenta, aunque apenas se había puesto en práctica. Algoritmos matemáticos basados en una estructura de nodos interconectados (como las neuronas de nuestro cerebro) capaces de aprender a solucionar problemas a base de un entrenamiento con datos en los que se busca optimizar el resultado. Sistemas tremendamente flexibles, capaces de abordar los problemas más complejos, pero con dos requerimientos impepinables:</p>
+<ol>
+<li>Una gran capacidad de computación de los ordenadores.</li>
+<li>Una gran cantidad de datos para entrenarlos.</li>
+</ol>
+<p>A partir de la década de 2010 se empezó a disponer de ambos recursos en cantidades suficientes.</p>
+<p>Y con el despegue de esta tecnología, los algoritmos basados en redes neuronales evolucionaron hacia la sofisticación y se hicieron conocidos como modelos de Deep Learning (aprendizaje profundo). En ellos, entre las entradas suministradas y la salida producida, lo que hacen las capas intermedias de nodos es desconocido. Estos sistemas funcionan como una caja negra dentro de la cual no se sabe con qué criterios se valoran las señales, solo se sabe que dan un resultado deseado como fruto del aprendizaje al que han sido sometidos:</p>
+<p><img alt="" src="../imgs/draw_030.png" /></p>
+<p>Ni más ni menos que lo que sucede con la mente humana. Este hecho, junto con los paralelismos de los nodos-neuronas y el hecho de que con ellos se pueda empezar a dar respuesta a problemas de verdadera inteligencia humana, hizo que se recuperara término Inteligencia Artificial, ahora ya asociado a Deep Learning.</p>
+<p><img alt="" src="../imgs/draw_031.png" /></p>
+<p>El cambio de paradigma que se había producido con Machine Learning y el aprendizaje automático a partir de los datos, con la Inteligencia Artificial moderna se vuelve norma. Al fin y al cabo, en el llamado Machine Learning clásico los modelos son interpretables y aún se puede seguir la pista analítica de lo que están haciendo. Sin embargo, las tripas de la Inteligencia Artificial son poco menos que inescrutables, y con ellos la única forma de hablar es la de darles de comer ejemplos.</p>
+<p>Esto también sucede entre los seres humanos. Cuando las personas nos comunicamos los unos con los otros, por ejemplo para que alguien haga algo por nosotros, tenemos la posibilidad de dar instrucciones precisas. Pero más habitualmente, y sobre todo cuando definirlo resulta difícil (o imposible), lo que hacemos es dar ejemplos. «Mira aquí estos ejemplos, quiero que hagas uno como estos, y luego tu ya te arreglarás». Así es como lo hacemos a menudo.</p>
+<p>Pues bien, la Inteligencia Artificial es esta herramienta que nos permite comunicarnos con las máquinas a base de darles ejemplos, de esta manera tan natural para nosotros que sin embargo hasta hace poco nos estaba vedada con respecto a los ordenadores. Como los problemas más complejos de la realidad frecuentemente no admiten ser definidos de manera precisa, esta nueva forma de hacer que los ordenadores hagan cosas por nosotros resulta una gran liberación.</p>
+<p>Por decirlo de una manera quizá más poética, la Inteligencia Artificial permite automatizar lo inefable y por ello abre la vía a solucionar toda una nueva gama de tareas que antes era impensable acometer.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
