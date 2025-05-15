@@ -8,6 +8,7 @@ site_description: Curso de Machine Learning
 theme:
   name: material
   features:
+    - navigation.footer
     - navigation.instant
 
 # Extensions
